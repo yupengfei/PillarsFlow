@@ -40,9 +40,8 @@ Rectangle {
                 a.y = (root.currentContext["peopleWin"] .height-a.height)/2-20;
                 console.log( a.width,a.height,a.x,a.y);
             } else {
-                console.log("组建的状态"+everyPerson.status)
+                console.log("组件的状态"+everyPerson.status)
             }
-
         }
 
     }

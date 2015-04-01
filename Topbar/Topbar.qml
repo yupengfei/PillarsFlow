@@ -15,7 +15,7 @@ Rectangle {
         color: "#03997e"
         Image {
             id: logo
-            source: "qrc:/Pictures/logo.png"
+            source: "qrc:/picture/Pictures/logo.png"
         }
     }
     TopbarMenuItem {
@@ -23,7 +23,7 @@ Rectangle {
         width: menuItemWidth
         height: parent.height
         anchors.right: shot.left
-        iconUrl: "qrc:/Pictures/home-icon.png"
+        iconUrl: "qrc:/picture/Pictures/home-icon.png"
         MouseArea {
             anchors.fill: parent
             onClicked: TopbarJs.changeView("home")
@@ -34,7 +34,7 @@ Rectangle {
         width: menuItemWidth
         height: parent.height
         anchors.right: asset.left
-        iconUrl: "qrc:/Pictures/write-icon.png"
+        iconUrl: "qrc:/picture/Pictures/write-icon.png"
         MouseArea {
             anchors.fill: parent
             onClicked: TopbarJs.changeView("shot")
@@ -45,7 +45,7 @@ Rectangle {
         width: menuItemWidth
         height: parent.height
         anchors.right: daily.left
-        iconUrl: "qrc:/Pictures/folder-icon.png"
+        iconUrl: "qrc:/picture/Pictures/folder-icon.png"
         MouseArea {
             anchors.fill: parent
             onClicked: TopbarJs.changeView("asset")
@@ -56,7 +56,7 @@ Rectangle {
         width: menuItemWidth
         height: parent.height
         anchors.right: people.left
-        iconUrl: "qrc:/Pictures/daily-icon.png"
+        iconUrl: "qrc:/picture/Pictures/daily-icon.png"
         MouseArea {
             anchors.fill: parent
             onClicked: TopbarJs.changeView("daily")  //
@@ -67,7 +67,7 @@ Rectangle {
         width: menuItemWidth
         height: parent.height
         anchors.right: parent.right
-        iconUrl: "qrc:/Pictures/people-icon.png"
+        iconUrl: "qrc:/picture/Pictures/people-icon.png"
 
         MouseArea {
             anchors.fill: parent

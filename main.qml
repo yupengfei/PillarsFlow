@@ -5,6 +5,7 @@ import QtQuick.LocalStorage 2.0
 import "Connection"
 import "Topbar"
 import "Home"
+import "People"
 
 import "js/storage.js" as StorageJs
 import "js/constants.js" as ConstantsJs
@@ -17,14 +18,27 @@ import "js/shot.js" as ShotJs
 import "js/asset.js" as AssetJs
 import "js/daily.js" as DailyJs
 import "js/people.js" as PeopleJs
+import "js/project.js" as ProjectJs
+import "js/chart.js" as ChartJs
 
 Window {
     id: root
     property var currentContext: ({})
+
+    property color backgroundColor: "#2c2c2c"
+    property color splitlineColor: "#373737"
+    property color inputTitleColor: "#8b8b8b"
+    property color inputTextColor: "#606060"
+    property color inputBackgroundColor: "#282828"
+
+    property color chartBackgroundOneColor: "#636363"
+    property color chartBackgroundTwoColor: "#029b79"
+    property color charTextColor: "#E8E8E8"
+
     visible: true
     width: 1000
     height: 700
-    Connnection {
+    Connection {
         id: socket
     }
     Topbar {
@@ -48,6 +62,7 @@ Window {
         highlightFollowsCurrentItem: true
         highlightMoveDuration: 240
         highlightRangeMode: ListView.StrictlyEnforceRange
+        anchors.top: topBar.bottom
     }
 
     VisualItemModel {
@@ -57,7 +72,6 @@ Window {
             width: mainAreaView.width
             height: mainAreaView.height
         }
-
         Rectangle {
             id: shot
             width: mainAreaView.width
@@ -75,7 +89,7 @@ Window {
             height:mainAreaView.height
         }
 
-        Rectangle {
+        People {
             id: people
             width: mainAreaView.width
             height: mainAreaView.height
@@ -118,8 +132,10 @@ Window {
         root.currentContext["assetJs"] = AssetJs;
         root.currentContext["dailyJs"] = DailyJs;
         root.currentContext["peopleJs"] = PeopleJs;
+        root.currentContext["projectJs"] = ProjectJs;
+        root.currentContext["chartJs"] = ChartJs;
 
-        root.currentContext["personInfoComponent"] = Qt.createComponent("qrc/People/PersonInfo.qml");
+        root.currentContext["personInfoComponent"] = Qt.createComponent("qrc/people/People/PersonInfo.qml");
         root.currentContext["storage"] = LocalStorage.openDatabaseSync("PillarsFlow", "1.0", "缓存当前内容", 100000);
         root.currentContext["storageJs"].initDatabase(root.currentContext["storage"]);
 

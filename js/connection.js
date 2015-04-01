@@ -14,11 +14,10 @@ function dispatch(message) {
     }
 
     else {
-        //        console.log(result.Command);
         if (result.Command === "login") {
             root.currentContext["loginJs"].onLogin(result);
         } else if (result.Command === "getAllProject") {
-            onGetAllProject(result);
+            root.currentContext["projectJs"].onGetAllProject(result);
         } else if (result.Command === "addProject") {
             root.currentContext["production"].onAddProject(result);
         }else if(result.Command === "modifyProject") {
@@ -27,7 +26,7 @@ function dispatch(message) {
         } else if(result.Command ==="getAllUnreceivedChart") {
             root.currentContext["chart"].onGetAllUnreceivedChart(result);
         } else if(result.Command === "getAllUser") {
-            root.currentContext["people"].onGetAllUser(result);
+            root.currentContext["peopleJs"].onGetAllUser(result);
         } else if (result.Command === "addNode") {
             root.currentContext["production"].onAddNode(result);
         } else if(result.Command === "getProjectAssertCampaign") {

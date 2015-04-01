@@ -4,6 +4,7 @@ Rectangle {
     id: people
     width: 1024
     height: 768
+    color: "blue"
 
     GridView {
         id:personGridview

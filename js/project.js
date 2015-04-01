@@ -9,10 +9,10 @@ function onAddProject(res) {
     root.currentContext["projectListModel"].append(project);
 }
 //向服务器发送project接口信息，在connection.js 里的p29行－41行得到相应的projectList
-function getProjectList() {
-    console.log("to do, get the project list");
-    var outMessage = new root.currentContext.types.OutMessage("getAllProject", "");
-    root.currentContext.connection.sendMessage(JSON.stringify(outMessage));
+function getAllProject() {
+    console.log("geting the project list");
+    var outMessage = new root.currentContext['typesJs'].OutMessage("getAllProject", "");
+    root.currentContext['connectionJs'].sendMessage(JSON.stringify(outMessage));
 }
 //根据command参数，用dispatch()转发到onGetAllProject（）这个函数
 function onGetAllProject(res) {
@@ -20,13 +20,10 @@ function onGetAllProject(res) {
     var projectList = JSON.parse(res.Result);  //获取整个大结果集合里面的Result
     if (projectList === null)
         return;
-    //projectlist 是一个数组
-    root.currentContext["projects"] = projectList;
-    //root.currentContext["projectListModel"].clear();
-    console.log("ongetallproject" + root.currentContext["projects"].length);
-    for (var i = 0; i < root.currentContext["projects"].length; ++i) {
+    console.log("ongetallproject" + projectList.length);
+    for (var i = 0; i < projectList.length; ++i) {
 
-        root.currentContext["projectListModel"].append(root.currentContext["projects"][i]);
+        root.currentContext["projectListModel"].append(projectList[i]);
 
     }
     console.log("ongetallproject" + root.currentContext["projectListModel"].count);
@@ -50,4 +47,18 @@ function onModifyCurrentProject(res) {
     root.currentContext["projectListModel"].remove(root.currentContext["currentProjectIndex"],1);
     root.currentContext["projectListModel"].insert(root.currentContext["currentProjectIndex"],modifiedProject);
 
+}
+
+//登陆框
+function showNewProject() {
+    var projectNew = Qt.createComponent("qrc:/Project/ProjectNew.qml");
+    if (projectNew.status === Component.Error) {
+        console.log("Error loading component:", projectNew.errorString());
+    }
+    var projectNewWidth = root.width*3/5
+    var projectNewHeight = root.height/2
+
+    var projectNewWindow = projectNew.createObject(root, {width: projectNewWidth, height: projectNewHeight});
+    //projectNewWindow.width = Qt.binding(function() {return root.width});
+    //projectNewWindow.height = Qt.binding(function() {return root.height});
 }

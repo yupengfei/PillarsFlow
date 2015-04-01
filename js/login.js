@@ -10,8 +10,10 @@ function onLogin(res) {
     if (res.Result !== "") {
         var user = JSON.parse(res.Result);
         currentUserModel.append(user);
-        console.log("login success" + user.DisplayName);
+        console.log("login success:" + user.DisplayName);
         root.currentContext["loginWindow"].destroy();
+        root.currentContext["projectJs"].getAllProject();
+        root.currentContext["peopleJs"].getAllUser();
     }
     else {
         root.currentContext["loginWindow"].showMessage("用户名或密码错误！");

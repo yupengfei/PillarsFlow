@@ -21,7 +21,7 @@ Rectangle {
             width: container.width - (parent.shadowRadius * 4)
             height: container.height - (parent.shadowRadius * 4)
             anchors.centerIn: parent
-            color: root.currentContext["constantsJs"].backgroundColor
+            color: backgroundColor
             radius: 7
             Grid {
                 id:grid
@@ -36,19 +36,19 @@ Rectangle {
                 Text {
                     text: "UserEmail:"
                     font.pointSize: 16
-                    color: root.currentContext["constantsJs"]["inputTextColor"]
+                    color: inputTextColor
                 }
                 Rectangle {
                     width: 200
                     height: 30
                     radius: 5
-                    color: root.currentContext["constantsJs"]["inputBackgroundColor"]
+                    color: inputBackgroundColor
                     TextInput {
                         id: userEmail
                         anchors.fill: parent
                         anchors.leftMargin: 6
                         font.pointSize: 16
-                        color: root.currentContext["constantsJs"]["inputTextColor"]
+                        color: inputTextColor
                         autoScroll: false
                         selectByMouse: true
                         verticalAlignment: Text.AlignVCenter
@@ -60,19 +60,19 @@ Rectangle {
                 Text {
                     text: "Password :"
                     font.pointSize: 16
-                    color: root.currentContext["constantsJs"]["inputTextColor"]
+                    color: inputTextColor
                 }
                 Rectangle {
                     width: 200
                     height: 30
                     radius: 5
-                    color: root.currentContext["constantsJs"]["inputBackgroundColor"]
+                    color: inputBackgroundColor
                     TextInput {
                         id: password
                         anchors.fill: parent
                         anchors.leftMargin: 6
                         font.pointSize: 12
-                        color: root.currentContext["constantsJs"]["inputTextColor"]
+                        color: inputTextColor
                         echoMode: TextInput.Password
                         autoScroll: false
                         selectByMouse: true
@@ -113,7 +113,7 @@ Rectangle {
                 height: 20
                 Text {
                     id: loginMessageText
-                    color: root.currentContext["constantsJs"]["inputTextColor"]
+                    color: inputTextColor
                     text: ""
                 }
             }

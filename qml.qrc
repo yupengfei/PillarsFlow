@@ -1,15 +1,48 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Utility/CancelButton.qml</file>
-        <file>Home/Home.qml</file>
-        <file>js/connection.js</file>
         <file>Login/Login.qml</file>
-        <file>js/constants.js</file>
-        <file>Connection/Connnection.qml</file>
+        <file>Connection/Connection.qml</file>
         <file>Topbar/Topbar.qml</file>
         <file>Topbar/TopbarMenuItem.qml</file>
+        <file>Home/Home.qml</file>
+        <file>Home/ChartList.qml</file>
+        <file>Home/PostList.qml</file>
+        <file>Home/SelfInfo.qml</file>
+        <file>Project/ProjectList.qml</file>
+        <file>Project/ProjectNew.qml</file>
+        <file>People/People.qml</file>
+        <file>People/Person.qml</file>
+        <file>People/PersonInfo.qml</file>
+        <file>Utility/AddButton.qml</file>
+        <file>Utility/CancelButton.qml</file>
+        <file>Utility/CloseButton.qml</file>
         <file>js/topbar.js</file>
+        <file>js/login.js</file>
+        <file>js/main.js</file>
+        <file>js/types.js</file>
+        <file>js/home.js</file>
+        <file>js/shot.js</file>
+        <file>js/daily.js</file>
+        <file>js/people.js</file>
+        <file>js/storage.js</file>
+        <file>js/project.js</file>
+        <file>js/user.js</file>
+        <file>js/target.js</file>
+        <file>js/mission.js</file>
+        <file>js/chart.js</file>
+        <file>js/post.js</file>
+        <file>js/connection.js</file>
+        <file>js/constants.js</file>
+        <file>js/asset.js</file>
+        <file>Home/ChatItem.qml</file>
+        <file>js/date.js</file>
+        <file>Gantt/Canvas.qml</file>
+        <file>Chart/Chart.qml</file>
+        <file>Chart/ChartItem.qml</file>
+        <file>Chart/InputBox.qml</file>
+    </qresource>
+    <qresource prefix="/picture">
         <file>Pictures/PeopleTest/12.jpg</file>
         <file>Pictures/PeopleTest/13.jpg</file>
         <file>Pictures/PeopleTest/14.jpg</file>
@@ -83,27 +116,5 @@
         <file>Pictures/write-icon.png</file>
         <file>Pictures/PeopleTest/1.jpg</file>
         <file>Pictures/PeopleTest/11.jpg</file>
-        <file>Home/SelfInfo.qml</file>
-        <file>js/login.js</file>
-        <file>js/main.js</file>
-        <file>js/types.js</file>
-        <file>js/home.js</file>
-        <file>js/shot.js</file>
-        <file>js/asset.js</file>
-        <file>js/daily.js</file>
-        <file>js/people.js</file>
-        <file>Home/ChartList.qml</file>
-        <file>Home/MissionTable.qml</file>
-        <file>Home/PostList.qml</file>
-        <file>js/storage.js</file>
-        <file>js/project.js</file>
-        <file>js/user.js</file>
-        <file>js/target.js</file>
-        <file>js/mission.js</file>
-        <file>js/chart.js</file>
-        <file>js/post.js</file>
-        <file>People/People.qml</file>
-        <file>People/Person.qml</file>
-        <file>People/PersonInfo.qml</file>
     </qresource>
 </RCC>
